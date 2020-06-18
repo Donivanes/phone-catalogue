@@ -6,7 +6,7 @@ const reducer = (state = {}, action) => {
       return state.phones;
 
     case "SET_PHONES":
-      return { ...state, PhoneList: action.phones };
+      return { ...state, phones: action.phones };
   }
   return state;
 };
