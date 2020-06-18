@@ -8,6 +8,18 @@ Clone the application:
 git clone https://github.com/Donivanes/phone-catalogue.git
 ```
 
+Create .env in Server folder and in Client folder
+
+| Server       | Description                   |
+| ------------ | ----------------------------- |
+| [PORT]       | The port that you want to use |
+| [URL_SERVER] | The url of the server         |
+| [URL_CLIENT] | The url of the client         |
+
+| Cient        | Description           |
+| ------------ | --------------------- |
+| [URL_SERVER] | The url of the server |
+
 Run the server:
 
 ```
