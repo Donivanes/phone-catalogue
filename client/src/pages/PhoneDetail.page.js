@@ -34,7 +34,7 @@ export const PhoneDetailPage = connect((state) => ({ phones: state.phones }))(
                   <Card.Body>
                     <ImageWrapper>
                       <img
-                        src={`${process.env.URL_SERVER}/static/images/${list[id].imageFileName}`}
+                        src={`http://localhost:3000/static/images/${list[id].imageFileName}`}
                         alt="phone"
                       />
                     </ImageWrapper>
