@@ -3,8 +3,6 @@ import { connect } from "react-redux";
 import { Header } from "../components/Header";
 import { ImageWrapper } from "../components/Image";
 
-import { useGetPhone } from "../../lib/redux/action";
-
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
@@ -36,7 +34,7 @@ export const PhoneDetailPage = connect((state) => ({ phones: state.phones }))(
                   <Card.Body>
                     <ImageWrapper>
                       <img
-                        src={`http://localhost:3000/static/images/${list[id].imageFileName}`}
+                        src={`${process.env.URL_SERVER}/static/images/${list[id].imageFileName}`}
                         alt="phone"
                       />
                     </ImageWrapper>
