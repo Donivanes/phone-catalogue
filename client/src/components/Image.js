@@ -1,5 +1,10 @@
-import React from "react";
+import styled from "styled-components";
 
-export const Image = ({ source }) => (
-  <img src={`../../public/img/${source}`} alt="Image" />
-);
+export const ImageWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  img {
+    height: 200px;
+    width: 200px;
+  }
+`;

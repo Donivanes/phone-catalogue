@@ -1,19 +1,15 @@
 import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
 import { Header } from "../components/Header";
+import { ImageWrapper } from "../components/Image";
+
+import { useGetPhone } from "../../lib/redux/action";
 
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Card from "react-bootstrap/Card";
 import ListGroup from "react-bootstrap/ListGroup";
-import styled from "styled-components";
-
-const Image = styled.div`
-  height: 200px;
-  width: 200px;
-  background-image: ${(props) => props.phoneimg};
-`;
 
 export const PhoneDetailPage = connect((state) => ({ phones: state.phones }))(
   ({ phones, match }) => {
@@ -38,9 +34,12 @@ export const PhoneDetailPage = connect((state) => ({ phones: state.phones }))(
               {list && (
                 <Card style={styleCard}>
                   <Card.Body>
-                    <Image
-                      phoneimg={`url(../../public/img/${list[id].imageFileName}`}
-                    />
+                    <ImageWrapper>
+                      <img
+                        src={`http://localhost:3000/static/images/${list[id].imageFileName}`}
+                        alt="phone"
+                      />
+                    </ImageWrapper>
                     <Card.Title>
                       {list[id].name} - {list[id].manufacturer}
                     </Card.Title>

@@ -3,20 +3,13 @@ import { connect } from "react-redux";
 
 import { Link } from "react-router-dom";
 import { Header } from "../components/Header";
+import { ImageWrapper } from "../components/Image";
 
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
-import styled from "styled-components";
-
-const Image = styled.img`
-  height: 200px;
-  width: 200px;
-  display: flex;
-  justify-content: center;
-`;
 
 export const HomePage = connect((state) => ({ phones: state.phones }))(
   ({ phones }) => {
@@ -40,10 +33,12 @@ export const HomePage = connect((state) => ({ phones: state.phones }))(
               {list &&
                 list.map((phone) => (
                   <Card style={styleCard} key={phone.id}>
-                    <Image
-                      src={`http://localhost:3000/server/images/${phone.imageFileName}`}
-                      alt="phone"
-                    />
+                    <ImageWrapper>
+                      <img
+                        src={`http://localhost:3000/static/images/${phone.imageFileName}`}
+                        alt="phone"
+                      />
+                    </ImageWrapper>
                     <Card.Body>
                       <Card.Title>{phone.manufacturer}</Card.Title>
                       <Card.Text>{phone.name}</Card.Text>

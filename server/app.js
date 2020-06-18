@@ -29,8 +29,6 @@ app.use(cookieParser());
 
 app.use("/static", express.static(__dirname + "/public"));
 
-app.use(express.static(path.join(__dirname, "public")));
-
 // Routes
 const index = require("./routes/index");
 app.use("/", index);
