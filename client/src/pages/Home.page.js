@@ -35,7 +35,7 @@ export const HomePage = connect((state) => ({ phones: state.phones }))(
                   <Card style={styleCard} key={phone.id}>
                     <ImageWrapper>
                       <img
-                        src={`http://localhost:3000/static/images/${phone.imageFileName}`}
+                        src={`${process.env.URL_SERVER}/static/images/${phone.imageFileName}`}
                         alt="phone"
                       />
                     </ImageWrapper>
