@@ -1,22 +1,23 @@
 version: "3"
 services:
   frontend:
-    container_name: phones_client
-    build:
-      context: ./client
-      dockerfile: Dockerfile
-    image: myproject/phones_client
+    build: ./client
+    expose:
+      - 1234
     ports:
-      - "1234:1234"
+      - 1234:1234
     volumes:
-      - ./client:/usr/src/app
+      - ./client/src:/usr/src/app/src
+      - ./client/public:/usr/src/app/public
+    links:
+      - backend
+    command: npm run start
   backend:
-    container_name: phones_server
-    build:
-      context: ./server
-      dockerfile: Dockerfile
-    image: myproject/phones_server
+    build: ./server
+    expose:
+      - 3000
     ports:
-      - "3000:3000"
+      - 3000:3000
     volumes:
-      - ./server:/usr/src/app
+      - ./server/src:/usr/src/app/src
+    command: npm run dev
