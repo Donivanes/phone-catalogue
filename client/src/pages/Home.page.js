@@ -29,7 +29,6 @@ export const HomePage = connect((state) => ({ phones: state.phones }))(
         <Header />
         <Container>
           <Row className="justify-content-md-center">
-            {/* <Col md="auto"> */}
             {list &&
               list.map((phone) => (
                 <Card style={styleCard} key={phone.id}>
@@ -50,7 +49,6 @@ export const HomePage = connect((state) => ({ phones: state.phones }))(
                   </Link>
                 </Card>
               ))}
-            {/* </Col> */}
           </Row>
         </Container>
       </>

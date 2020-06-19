@@ -41,16 +41,32 @@ export const PhoneDetailPage = connect((state) => ({ phones: state.phones }))(
                     <Card.Title>
                       {list[id].name} - {list[id].manufacturer}
                     </Card.Title>
-                    <Card.Text>{list[id].description}</Card.Text>
+                    <Card.Text>
+                      <b>Description: </b>
+                      {list[id].description}
+                    </Card.Text>
                   </Card.Body>
                   <ListGroup className="list-group-flush">
-                    <ListGroup.Item>Color: {list[id].color}</ListGroup.Item>
-                    <ListGroup.Item>Price: {list[id].price}</ListGroup.Item>
-                    <ListGroup.Item>Screen: {list[id].screen}</ListGroup.Item>
                     <ListGroup.Item>
-                      Processor: {list[id].processor}
+                      <b>Color: </b>
+                      {list[id].color}
                     </ListGroup.Item>
-                    <ListGroup.Item>Ram: {list[id].ram}</ListGroup.Item>
+                    <ListGroup.Item>
+                      <b>Price: </b>
+                      {list[id].price}
+                    </ListGroup.Item>
+                    <ListGroup.Item>
+                      <b>Screen: </b>
+                      {list[id].screen}
+                    </ListGroup.Item>
+                    <ListGroup.Item>
+                      <b>Processor: </b>
+                      {list[id].processor}
+                    </ListGroup.Item>
+                    <ListGroup.Item>
+                      <b>Ram: </b>
+                      {list[id].ram}
+                    </ListGroup.Item>
                   </ListGroup>
                 </Card>
               )}
