@@ -29,28 +29,28 @@ export const HomePage = connect((state) => ({ phones: state.phones }))(
         <Header />
         <Container>
           <Row className="justify-content-md-center">
-            <Col md="auto">
-              {list &&
-                list.map((phone) => (
-                  <Card style={styleCard} key={phone.id}>
-                    <ImageWrapper>
-                      <img
-                        src={`http://localhost:3000/static/images/${phone.imageFileName}`}
-                        alt="phone"
-                      />
-                    </ImageWrapper>
-                    <Card.Body>
-                      <Card.Title>{phone.manufacturer}</Card.Title>
-                      <Card.Text>{phone.name}</Card.Text>
-                    </Card.Body>
-                    <Link to={`/phone/${phone.id}`}>
-                      <Button variant="primary" block>
-                        Specifications
-                      </Button>
-                    </Link>
-                  </Card>
-                ))}
-            </Col>
+            {/* <Col md="auto"> */}
+            {list &&
+              list.map((phone) => (
+                <Card style={styleCard} key={phone.id}>
+                  <ImageWrapper>
+                    <img
+                      src={`http://localhost:3000/static/images/${phone.imageFileName}`}
+                      alt="phone"
+                    />
+                  </ImageWrapper>
+                  <Card.Body>
+                    <Card.Title>{phone.manufacturer}</Card.Title>
+                    <Card.Text>{phone.name}</Card.Text>
+                  </Card.Body>
+                  <Link to={`/phone/${phone.id}`}>
+                    <Button variant="primary" block>
+                      Specifications
+                    </Button>
+                  </Link>
+                </Card>
+              ))}
+            {/* </Col> */}
           </Row>
         </Container>
       </>
